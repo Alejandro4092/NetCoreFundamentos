@@ -20,7 +20,16 @@ namespace NetCoreFundamentos
             this.txtNombre.Text = "Soy un texto nuevo!!!";
             this.txtNombre.Width = 220;
             this.txtNombre.BackColor = Color.Fuchsia;
-
+            //string a primitivo
+            string textonumero = "888";
+            int numero = int.Parse(textonumero);
+            double otro = double.Parse(textonumero);
+            //casting
+            int mayor = 88;
+            short pequeño = (short)mayor;
+            //convertir a texto
+            string dato = pequeño.ToString();
+            dato = this.btnPulsar.ToString();
 
         }
 
