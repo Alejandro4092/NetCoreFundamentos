@@ -23,15 +23,25 @@ namespace NetCoreFundamentos
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            string producto = txtProducto.Text;
-            this.lstTienda.Items.Add(producto);
-            int productos = this.lstTienda.SelectedIndices.Count - 1;
-            foreach (var items in this.lstTienda.Items)
-            {
-              
-            }
 
+            string producto = txtProducto.Text.Trim();
+
+
+
+
+            if (!this.lstTienda.Items.Contains(producto))
+            {
+
+                this.lstTienda.Items.Add(producto);
+                txtProducto.Clear();
+            }
+            else
+            {
+
+                MessageBox.Show("El producto ya existe");
+            }
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -39,7 +49,6 @@ namespace NetCoreFundamentos
             for (int i = productos; i >= 0; i--)
             {
                 int index = this.lstTienda.SelectedIndices[i];
-                //ELIMINAMOS DE LA COLECCION 
                 this.lstTienda.Items.RemoveAt(index);
             }
 
