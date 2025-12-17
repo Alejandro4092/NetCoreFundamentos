@@ -105,6 +105,7 @@
             lblRaton.TabIndex = 6;
             lblRaton.Text = "label1";
             lblRaton.TextAlign = ContentAlignment.MiddleCenter;
+            lblRaton.MouseMove += lblRaton_MouseMove;
             // 
             // label1
             // 
@@ -121,6 +122,7 @@
             txtSoloNumeros.Name = "txtSoloNumeros";
             txtSoloNumeros.Size = new Size(211, 23);
             txtSoloNumeros.TabIndex = 8;
+            txtSoloNumeros.KeyPress += txtSoloNumeros_KeyPress;
             // 
             // label3
             // 
@@ -138,6 +140,7 @@
             txtSoloLetras.Name = "txtSoloLetras";
             txtSoloLetras.Size = new Size(211, 23);
             txtSoloLetras.TabIndex = 10;
+            txtSoloLetras.KeyPress += txtSoloLetras_KeyPress;
             // 
             // Form14Metodos
             // 

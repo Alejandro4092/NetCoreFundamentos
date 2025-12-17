@@ -53,5 +53,30 @@ namespace NetCoreFundamentos
         {
 
         }
+
+        private void lblRaton_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.lblRaton.Text = "X: " + e.X + ", Y: " + e.Y;
+        }
+
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char teclaBorrar = (char)Keys.Back;
+            if (Char.IsDigit(e.KeyChar) == false && e.KeyChar!=teclaBorrar)
+            {
+                //Indica si nos hacemos cargo del evento de key
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoloLetras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char teclaBorrar = (char)Keys.Back;
+            if (Char.IsLetter(e.KeyChar) == false && e.KeyChar != teclaBorrar)
+            {
+                //Indica si nos hacemos cargo del evento de key
+                e.Handled = true;
+            }
+        }
     }
 }
