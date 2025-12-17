@@ -26,18 +26,13 @@ namespace NetCoreFundamentos
 
             string producto = txtProducto.Text.Trim();
 
-
-
-
             if (!this.lstTienda.Items.Contains(producto))
             {
-
                 this.lstTienda.Items.Add(producto);
-                txtProducto.Clear();
+
             }
             else
             {
-
                 MessageBox.Show("El producto ya existe");
             }
         }
@@ -66,7 +61,7 @@ namespace NetCoreFundamentos
             foreach (string items in this.lstTienda.SelectedItems)
             {
                 this.lstAlmacen.Items.Add(items);
-               
+
             }
             for (int i = productos; i >= 0; i--)
             {
@@ -79,12 +74,31 @@ namespace NetCoreFundamentos
 
         private void btnTodos_Click(object sender, EventArgs e)
         {
-            foreach (string items in this.lstTienda.Items) 
+            foreach (string items in this.lstTienda.Items)
             {
                 this.lstAlmacen.Items.Add(items);
-                
+
             }
             this.lstTienda.Items.Clear();
+
+        }
+
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index - 1, producto);
+            this.lstAlmacen.SelectedIndex = index -1;
+        }
+
+        private void btnBajar_Click(object sender, EventArgs e)
+        {
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index - 1, producto);
+            this.lstAlmacen.SelectedIndex = index +1;
 
         }
     }

@@ -39,6 +39,8 @@
             btnTodos = new Button();
             lstAlmacen = new ListBox();
             label3 = new Label();
+            btnSubir = new Button();
+            btnBajar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -142,11 +144,33 @@
             label3.Text = "Almacen";
             label3.Click += label3_Click;
             // 
+            // btnSubir
+            // 
+            btnSubir.Location = new Point(721, 139);
+            btnSubir.Name = "btnSubir";
+            btnSubir.Size = new Size(75, 23);
+            btnSubir.TabIndex = 11;
+            btnSubir.Text = "Subir";
+            btnSubir.UseVisualStyleBackColor = true;
+            btnSubir.Click += btnSubir_Click;
+            // 
+            // btnBajar
+            // 
+            btnBajar.Location = new Point(721, 221);
+            btnBajar.Name = "btnBajar";
+            btnBajar.Size = new Size(75, 23);
+            btnBajar.TabIndex = 12;
+            btnBajar.Text = "Bajar";
+            btnBajar.UseVisualStyleBackColor = true;
+            btnBajar.Click += btnBajar_Click;
+            // 
             // Form13TiendaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(852, 500);
+            Controls.Add(btnBajar);
+            Controls.Add(btnSubir);
             Controls.Add(label3);
             Controls.Add(lstAlmacen);
             Controls.Add(btnTodos);
@@ -177,5 +201,7 @@
         private Button btnTodos;
         private ListBox lstAlmacen;
         private Label label3;
+        private Button btnSubir;
+        private Button btnBajar;
     }
 }
